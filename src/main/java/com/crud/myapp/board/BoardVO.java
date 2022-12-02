@@ -1,11 +1,10 @@
-package com.crud.bean;
+package com.crud.myapp.board;
 
 import java.util.Date;
 
 public class BoardVO { // Value Object (VO)
     private int seq;
     private String category;
-    private String photo;
     private String title;
     private String writer;
     private String content;
@@ -26,14 +25,6 @@ public class BoardVO { // Value Object (VO)
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
     }
 
     public String getTitle() {

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -9,6 +9,7 @@
     <title>free board</title>
     <style>
         #list {
+
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
@@ -39,10 +40,9 @@
     <script>
         function delete_ok(id) {
             const a = confirm("정말로 삭제하겠습니까?");
-            if (a) location.href = 'deletepost.jsp?id=' + id;
+            if (a) location.href = 'deleteok/';
         }
     </script>
-    <link rel="stylesheet" href="board.css">
 </head>
 <body>
 <h1>자유게시판</h1>
