@@ -14,7 +14,7 @@ public class BoardController {
     @Autowired
     BoardServiceImpl boardService;
 
-    @RequestMapping(value = "/iist", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardList(Model model) {
         model.addAttribute("list", boardService.getBoardList());
         return "list";
@@ -39,6 +39,13 @@ public class BoardController {
         BoardVO boardVO = boardService.getBoard(id);
         model.addAttribute("boardVO", boardVO);
         return "editform";
+    }
+
+    @RequestMapping(value = "/viewpost/{id}", method = RequestMethod.GET)
+    public String viewPost(@PathVariable("id") int id, Model model) {
+        BoardVO boardVO = boardService.getBoard(id);
+        model.addAttribute("boardVO", boardVO);
+        return "view";
     }
 
     @RequestMapping(value = "/editok", method = RequestMethod.POST)
